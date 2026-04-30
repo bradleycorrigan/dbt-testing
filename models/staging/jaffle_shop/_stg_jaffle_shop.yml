@@ -1,7 +1,9 @@
 models: 
   - name: stg_jaffle_shop_customers
+    description: "This is a description about the stg jaffle shop customers model"
     columns:
       - name: customer_id
+        description: primary key
         tests:
           - not_null
           - unique
@@ -12,6 +14,7 @@ models:
         tests:
           - not_null
   - name: stg_jaffle_shop_orders
+    description: "What's this table about? Grain etc."
     columns:
       - name: order_id
         tests:
@@ -28,6 +31,7 @@ models:
         tests: 
           - not_null
       - name: status
+        description: '{{ doc("order_status") }}'
         tests:
           - not_null
           - accepted_values:
